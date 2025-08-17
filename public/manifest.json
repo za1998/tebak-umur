@@ -1,6 +1,6 @@
 {
   "name": "Tebak Umur",
-  "short_name": "AgeGuesser",
+  "short_name": "Tebak Umur",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
