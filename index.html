@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d6efd" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>Tebak Umur</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Judul -->
+      <h1><span class="grad">Prediksi Usia dari Masa Depan!</span></h1>
+
+      <!-- Ikon Info -->
+      <div class="info-icon" onclick="toggleInfo()">ℹ</div>
+
+      <!-- Deskripsi disembunyikan awalnya -->
+      <div class="description hidden" id="infoBox">
+        <p><strong>Tebak Umur</strong> untuk memprediksi usia kamu berdasarkan tahun lahir.</p>
+        <p>✨ Mendukung <strong>PWA</strong> – bisa digunakan tanpa internet.<br>
+        ⚙️ HTML, CSS, JS, Vite<br>
+        🔒 Tidak menyimpan data kamu.<br>
+        📱 IG: <a href="https://instagram.com/kumahamen" target="_blank">@kumahamen</a></p>
+      </div>
+
+      <!-- Input dan tombol -->
+      <input
+        type="number"
+        id="yearInput"
+        placeholder="Isi tahun lahir kamu"
+        min="1000"
+        max="3000"
+      />
+      <button onclick="checkAge()">Hitung</button>
+      <p id="result"></p>
+    </div>
+
+    <script type="module" src="/src/App.js"></script>
+    <script>
+      function toggleInfo() {
+        const info = document.getElementById('infoBox');
+        info.classList.toggle('hidden');
+      }
+    </script>
+  </body>
+</html>

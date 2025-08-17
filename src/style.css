@@ -1,0 +1,144 @@
+/* Background animasi luar angkasa */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(ellipse at bottom, #0d0d0d 0%, #000 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Animasi bintang-bintang menggunakan box-shadow */
+.stars {
+  width: 2px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow:
+    20px 30px white, 100px 80px white, 250px 150px white,
+    300px 200px white, 400px 100px white, 500px 50px white,
+    600px 180px white, 700px 90px white, 800px 30px white,
+    900px 160px white, 1000px 100px white, 1100px 40px white;
+  animation: moveStars 60s linear infinite;
+  z-index: 0;
+  opacity: 0.4;
+}
+@keyframes moveStars {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-1000px); }
+}
+
+/* Container utama */
+.container {
+  background-color: rgba(17, 17, 17, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Judul gradasi warna */
+.grad {
+  background: linear-gradient(to right, #6a11cb, #ff4db8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+/* Ikon info pojok kanan atas */
+.info-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #444;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.info-icon:hover {
+  background-color: #666;
+  transform: scale(1.2);
+}
+.info-icon:active {
+  transform: scale(1.1);
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Box deskripsi yang bisa di-toggle */
+.description {
+  background-color: #222;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+.hidden {
+  display: none;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Input tahun lahir */
+input[type="number"] {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #333;
+  color: #fff;
+  margin: 0 auto 1rem auto;
+  display: block;
+  outline: none;
+  transition: background 0.3s, transform 0.2s;
+}
+input[type="number"]:focus {
+  background-color: #3b3b3b;
+  transform: scale(1.02);
+}
+
+/* Tombol hitung */
+button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  background: linear-gradient(to right, #00c6ff, #ff5e62);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 94, 98, 0.3);
+}
